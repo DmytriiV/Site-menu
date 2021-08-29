@@ -1,0 +1,94 @@
+
+body {
+    background: url(../image/fon3.png);
+}
+header{
+    margin-top: 40px ;
+    font-family: 'Cuprum', sans-serif;
+}
+.main_menu *{
+    margin: 0;
+    padding: 0;
+}
+.main_menu ul,
+.main_menu ol{
+    list-style: none;
+}
+.main_menu > ul{
+    display: flex;
+    justify-content: center;
+}
+.main_menu > ul li a{
+display: block;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100 */
+background: rgb(226,226,226); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+padding: 15px 30px 15px 40px;
+font-size: 20px;
+color: #454547;
+text-decoration: none;
+text-transform: uppercase;
+transition: all 1s ease;
+}
+.main_menu > ul li{
+    position: relative;
+    border-right:1px solid #c7c8ca;
+    z-index: 1;
+} 
+.main_menu > ul li:first-child{
+    border-left: 1px solid #b2b3b5;
+
+}
+.main_menu > ul li:last-child{
+    border-right: 1px solid #babbbb;
+    
+}
+.main_menu li a:hover{
+    background-color: #454547;
+    color: #ffffff;
+    box-shadow: 1px 5px 10px -5px black;
+    transition: all 1.5s ease;
+}
+
+
+/*submenu*/
+.main_menu li ul{
+    position: absolute;
+    min-width: 150px;
+    display: none;
+    z-index: 1;
+
+}
+.main_menu li > ul li{
+    border: 1px solid #c7c8ca;
+}
+.main_menu li >ul li a{
+    padding: 10px;
+    text-transform: none;
+    background: #e4e4e5;
+    
+}
+.main_menu li:hover > ul {
+    display: block;
+}
+
+.submenu {
+    position: relative;
+    right: -150px;
+    top: -40px;
+    z-index: 1;
+}
+
+h1 {
+    width: 700px;
+    height: 720px;
+    position: relative;
+    left: 410px;
+    background: rgb(212,223,226);
+    background: linear-gradient(90deg, rgba(212,223,226,0.950315160243785) 35%, rgba(83,75,56,0.37608546836703427) 98%);
+    
+
+}
