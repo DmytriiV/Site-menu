@@ -5,7 +5,7 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function (event){
+document.addEventListener("DOMContentLoaded", function (event) {
     document.getElementsByClassName('menu_item')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
     });
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function (event){
     document.getElementsByClassName('menu_item4')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
     });
-    
+
     document.getElementsByClassName('menu_item01')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
     });
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function (event){
     });
     document.getElementsByClassName('menu_item05')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
-    
+
     });
     document.getElementsByClassName('menu_item06')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
@@ -60,15 +60,19 @@ document.addEventListener("DOMContentLoaded", function (event){
 
 
 
-    function GeolocationgetCurrentPosition(){
-        console.log('TEST')
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition;
-        }else{
-            alert("Geolocation not supported by this browser");
-        }   
+function GeolocationgetCurrentPosition() {
+    console.log('TEST')
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((result) => {
+            console.log(result);
+
+        });
+
+    } else {
+        alert("Geolocation not supported by this browser");
     }
-    
+}
+
 
 
 
