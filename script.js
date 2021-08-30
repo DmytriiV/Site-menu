@@ -5,7 +5,7 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function (event){
     document.getElementsByClassName('menu_item')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
     });
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     document.getElementsByClassName('menu_item4')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
     });
-
+    
     document.getElementsByClassName('menu_item01')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
     });
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
     document.getElementsByClassName('menu_item05')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
-
+    
     });
     document.getElementsByClassName('menu_item06')[0].addEventListener('click', function (event) {
         document.getElementsByClassName('content')[0].innerHTML = event.target.innerHTML;
@@ -60,19 +60,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-function GeolocationgetCurrentPosition() {
-    console.log('TEST')
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((result) => {
-            console.log(result);
-
-        });
-
-    } else {
-        alert("Geolocation not supported by this browser");
+    function getLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(getWeather);
+        }else{
+            alert("Geolocation not supported by this browser");
+        }
     }
-}
 
+    function getWeather(position){
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+        let API_KEY = '490fd4018b707bb5309ea9320587eb4a';
+        let baseURL = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${API_KEY}`;
+
+        $.get(baseURL,function(res){
+            let data = res.current;
+            let temp = Math.floor(data.temp - 273);
+            let condition = data.weather[0].description;
+
+            $('#temp-main').html(`${temp}°`);
+            $('#condition').html(condition);
+        })
+        
+    }
+
+    getLocation();
+
+
+    
+    
 
 
 
