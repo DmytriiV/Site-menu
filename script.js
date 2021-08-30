@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function (event){
             let data = res.current;
             let temp = Math.floor(data.temp - 273);
             let condition = data.weather[0].description;
-
+            $(".bubblingG").hide();
             $('#temp-main').html(`${temp}°`);
             $('#condition').html(condition);
         })
@@ -86,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function (event){
     }
 
     getLocation();
+
+//animation
 
 
     
